@@ -13,4 +13,11 @@ public class InputValidTest {
 		assertThatThrownBy(() -> InputValidation.parseInputValueCar("waaaaaa,fasdf"))
 			.isInstanceOf(IllegalArgumentException.class);
 	}
+
+	@Test
+	void numberTypeValidTest() {
+		assertThat(InputValidation.intValueChecking("1")).isEqualTo(1);
+		assertThatThrownBy(() -> InputValidation.intValueChecking("gfef"))
+			.isInstanceOf(IllegalArgumentException.class);
+	}
 }
